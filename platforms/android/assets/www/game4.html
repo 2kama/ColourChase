@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main2.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript">
+        
+        localStorage.check = localStorage.higher1;
+
+        document.addEventListener("backbutton", dismissApp, false);
+        function dismissApp() {
+           window.history.back();
+         }
+     </script>
+     <script type="text/javascript">
+       var pick = ['a','b','c','d','e','f','0','1','2','3','4','5','6','7','8','9'];
+       
+       var correct = ['.un','.deux','.trois','.quatre','.cinq','.six','.sept','.hint','.neuf','.dix','.onze','.douze'];
+
+     </script>
+
+
+
+     <script type="text/javascript">
+
+          
+          $(document).ready(function() {
+
+          var p1 = Math.floor(Math.random() * 16);
+           var p2 = Math.floor(Math.random() * 16);
+           var p3 = Math.floor(Math.random() * 16);
+           var p4 = Math.floor(Math.random() * 16);
+           var p5 = Math.floor(Math.random() * 16);
+           var p6 = Math.floor(Math.random() * 16);
+           var standard = "#" + pick[p1] + pick[p2] + pick[p3] + pick[p4] + pick[p5] + pick[p6];
+           $("#standard").css("background", standard);
+
+           var cor = Math.floor(Math.random() * 12);
+           $(correct[cor]).css("background", standard);
+           $(correct[cor]).prepend("<div id='score'></div>");
+
+          for (var k = 0; k <= 11; k++) {
+               
+               if (correct[cor] != correct[k]) {
+                 var po1 = Math.floor(Math.random() * 16);
+                 var po2 = Math.floor(Math.random() * 16);
+                 var po3 = Math.floor(Math.random() * 16);
+                 var po4 = Math.floor(Math.random() * 16);
+                 var po5 = Math.floor(Math.random() * 16);
+                 var po6 = Math.floor(Math.random() * 16);
+                 var base = "#" + pick[po1] + pick[po2] + pick[po3] + pick[po4] + pick[po5] + pick[po6];
+                 $(correct[k]).css("background", base);
+               }
+               else {}
+
+           }
+
+
+
+          for (var f = 1; f <= 12; f++) {
+              $("#fail" + f).click(function() {
+                  counter = -999999;
+                  if (localStorage.vibrate == "yes") {
+                      navigator.notification.vibrate(500);
+                   }
+                  else {}
+              });
+          }
+         
+
+          $("#score").click(function() {
+
+            point = point + 1;
+
+           
+           var p1 = Math.floor(Math.random() * 16);
+           var p2 = Math.floor(Math.random() * 16);
+           var p3 = Math.floor(Math.random() * 16);
+           var p4 = Math.floor(Math.random() * 16);
+           var p5 = Math.floor(Math.random() * 16);
+           var p6 = Math.floor(Math.random() * 16);
+           var standard = "#" + pick[p1] + pick[p2] + pick[p3] + pick[p4] + pick[p5] + pick[p6];
+           $("#standard").css("background", standard);
+
+           var cor = Math.floor(Math.random() * 12);
+
+           $("#score").detach().prependTo(correct[cor]);
+
+           $(correct[cor]).css("background", standard);
+           //$(correct[cor]).prepend("<div id='score'></div>");
+
+           for (var k = 0; k <= 11; k++) {
+               
+               if (correct[cor] != correct[k]) {
+                 var po1 = Math.floor(Math.random() * 16);
+                 var po2 = Math.floor(Math.random() * 16);
+                 var po3 = Math.floor(Math.random() * 16);
+                 var po4 = Math.floor(Math.random() * 16);
+                 var po5 = Math.floor(Math.random() * 16);
+                 var po6 = Math.floor(Math.random() * 16);
+                 var base = "#" + pick[po1] + pick[po2] + pick[po3] + pick[po4] + pick[po5] + pick[po6];
+                 $(correct[k]).css("background", base);
+               }
+               else {}
+
+           }
+
+
+            });
+
+
+
+          
+
+
+          var point = 0;
+           var counter = 9999999999999999;
+           var stop = 0;
+           var per = 0;
+           var speed = point / (per / 10);
+           var speede = Math.round(speed * 1000) / 1000;
+
+
+           setInterval(function() { 
+             
+
+                counter = counter - 1;
+                
+
+                $("#goal").html('<i class="icon-checkmark"></i>  ' + point);
+                $("#timer").html('<i class="icon-electricity"></i> 0.000 t/s');
+               
+
+               if (counter >= 40 || stop == 1) {
+                   per = per;
+                  $("#backdrop").show();
+                  $("#timer").html('<i class="icon-electricity"></i> 0.000 t/s');
+               }
+               else if (point == 0) {
+                  per = per;
+                  $("#backdrop").hide();
+                  $("#timer").html('<i class="icon-electricity"></i> 0.000 t/s');
+               }
+               else {
+                  per = per + 1;
+                  speed = point / (per / 10);
+                  speede = Math.round(speed * 1000) / 1000;
+                  $("#backdrop").hide();
+                  $("#timer").html('<i class="icon-electricity"></i> ' + speede + ' t/s');
+               }
+
+               if (counter >= 46) {
+                  $("#fund").show();
+                  $("#fund").html("<i class='icon-happy'></i><br><i>Ready!!</i><br><br>Make 20 correct taps in the <br>shortest time possible.<br><div id='action'>tap to start</div>");
+               }
+               else {
+                  $("#fund").hide();               }
+
+
+               if (point == 20) {
+                 
+                  stop = 1;
+                  $("#backdrop").show();
+                  $("#fund").show();
+                  if (speede >= parseInt(localStorage.higher1)) {
+
+                      
+                      
+                      localStorage.higher1 = speede;
+
+                  }
+                  else {
+
+                  }
+                  $("#fund").html("<i class='icon-happy'></i><br><i>Go Again?!</i><br> Your Speed: " + speede + " t/s <br>Highscore: " + localStorage.higher1 + " t/s<br><br><a href='game4.html'><div id='action'>Replay</div></a>");
+
+               }
+               
+
+               if (counter <= -999999) {
+                  
+                  $("#timer").html('<i class="icon-electricity"></i> 0.000 t/s');
+                  $("#fund").show();
+                  $("#backdrop").show();
+                  $("#fund").html("<i class='icon-sad'></i><br><i>GameOver!</i><br><br><a href='game4.html'><div id='action'>Replay</div></a>");
+               }
+
+               if (counter <= -999999) {
+                  if (localStorage.vibrate == "yes") {
+                      navigator.notification.vibrate(500);
+                   }
+                  else {
+
+                  }
+               }
+               else {
+
+               }
+
+
+
+                $('#fund').click(function() { 
+                      if (counter > 4) {
+                        $('#fund').hide();
+                        $('#backdrop').hide();
+                    $('#panel').animate({'margin-left':'5%'}, 500, 'linear');
+                    $('#standard').animate({'margin-left':'5%'}, 500, 'linear');
+                    
+                    counter = 45;
+                     }
+                    else {
+                      
+                    }
+     
+                });
+
+           }, 100); 
+
+
+
+
+
+            });
+     </script>
+    
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <div id="fund"></div>
+    <div id="name">
+       <a href="play.html"><div id="logo" style="background: #4C004A;"><i class="icon-arrow-left-2"></i></div></a>
+       <div id="goal" style="background: #4C004A;"><i class="icon-checkmark"></i>0</div>
+       
+       <div id="timer"><i class="icon-electricity"></i> 0.000 t/s</div>
+    </div>
+
+    <div id="standard">
+
+    </div>
+
+    <div id="panel">
+       <div id="touch" class="un"><div id="fail1"></div></div>
+       <div id="touch" class="deux"><div id="fail2"></div></div>
+       <div id="touch" class="trois"><div id="fail3"></div></div>
+       <div id="touch" class="quatre"><div id="fail4"></div></div>
+       <div id="touch" class="cinq"><div id="fail5"></div></div>
+       <div id="touch" class="six"><div id="fail6"></div></div>
+       <div id="touch" class="sept"><div id="fail7"></div></div>
+       <div id="touch" class="hint"><div id="fail8"></div></div>
+       <div id="touch" class="neuf"><div id="fail9"></div></div>
+       <div id="touch" class="dix"><div id="fail10"></div></div>
+       <div id="touch" class="onze"><div id="fail11"></div></div>
+       <div id="touch" class="douze"><div id="fail12"></div></div>
+    </div>
+
+<div id="low"><img src="img/back.png" style="width:100%;" /></div>
+
+  </body>
+  </html>

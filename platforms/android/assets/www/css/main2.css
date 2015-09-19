@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'hobo';
+    src: url('../font/Ubuntu-L.ttf');
+         
+}
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: 'hobo';
+  tab-highlight-color: rgba(0,0,0,0);
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-o-tab-highlight-color: rgba(0,0,0,0);
+	-moz-tab-highlight-color: rgba(0,0,0,0);
+	-ms-tab-highlight-color: rgba(0,0,0,0);
+}
+body {
+  background: #fff;
+}
+a {
+	text-decoration: none;
+	
+}
+
+
+#top_board {
+	height: 50px;
+	width: 100%;
+	float: left;
+	color: #fff;
+	position: fixed;
+	z-index: 100;
+}
+#timer, #goal {
+	padding-top: 7px;
+	width: 42%;
+	float: left;
+	font-size: 22px;
+	text-align: center;
+	height: 33px;
+}
+#timer i {
+	color: #333;
+}
+#logo i {
+	color: #fff;
+}
+#goal {
+   border-top-right-radius: 60%;
+	-webkit-border-top-right-radius: 60%;
+	-ms-border-top-right-radius: 60%;
+	color: #fff;
+}
+#logo {
+	padding-top: 7px;
+	width: 15%;
+	float: left;
+	font-size: 22px;
+	text-align: center;
+	height: 33px;
+}
+
+#top_board img {
+	height: 40px;
+	float: left;
+	position: absolute;
+	margin-left: -13%;
+	margin-top: -3px;
+}
+
+#standard {
+	width: 90%;
+	margin-left: -120%;
+	height: 200px;
+	float: left;
+	position: fixed;
+	margin-top: 60px;
+	box-shadow: 0 3px 3px rgba(153, 153, 153, 0.6);
+}
+#panel {
+	width: 90%;
+	margin-left: 120%;
+	height: 200px;
+	float: left;
+	position: fixed;
+	margin-top: 270px;
+	box-shadow: 0 3px 3px rgba(153, 153, 153, 0.6);
+}
+#touch {
+	width: 25%;
+	height: 33.33%;
+	float: left;
+}
+#score {
+	background: transparent;
+	width: 100%;
+	height: 100%;
+	float: left;
+	z-index: 10;
+}
+#fail1, #fail2, #fail3, #fail4, #fail5, #fail6, #fail7, #fail8, #fail9, #fail10, #fail11, #fail12 {
+	background: transparent;
+	width: 100%;
+	height: 100%;
+	float: left;
+}
+#backdrop {
+	 position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: 0.6;
+	filter: alpha(opacity=0);
+	z-index: 50;
+	display: none;
+}
+#fund {
+	width: 100%;
+	padding-top: 20px;
+	color: #444;
+	text-align: center;
+	font-size: 16px;
+	top: 100px;
+	position: fixed;
+	display: none;
+	background: #fff;
+	z-index: 51;
+}
+
+#fund i {
+	font-size: 40px;
+	color: #444;
+}
+#fund a {
+	 text-decoration:none;
+	 font-weight:bold;
+	 color: #444;
+}
+
+#faster {
+	width: 60%;
+	padding: 10%;
+	text-align: center;
+	font-size: 20px;
+	top: 100px;
+	position: fixed;
+	display: none;
+	background: #fff;
+	z-index: 51;
+	margin-left: 10%;
+	font-weight:bold;
+	 color:#00B22D;
+}
+#classic {
+	width: 100%;
+	height: 100%;
+	float: left;
+	position: fixed;
+}
+#jump {
+	width: 100%;
+	height: 100%;
+	float: left;
+	height: 1000px;
+    padding-top: 100px;
+    font-size: 20px;
+    text-align: center;
+
+}
+#action {
+	background: #f60;
+	color: #fff;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+	width: 100%;
+}
+#name {
+	width: 100%;
+	font-size: 20px;
+	float: left;
+	position: fixed;
+	z-index: 100;
+	color: #333;
+	height: 40px;
+	background: #fff;
+	left: 0;
+}
+#set {
+	width: 80%;
+	font-size: 17px;
+	float: left;
+	padding-top: 8px;
+	padding-bottom: 2px;
+	height: 30px;
+	color: #fff;
+	border-top-right-radius: 60%;
+}
+#low {
+   width: 100%;
+   bottom: 0;
+   z-index: -2;
+   position: fixed;
+}
+
+
+
+@media (min-width: 481px) {
+
+
+
+}

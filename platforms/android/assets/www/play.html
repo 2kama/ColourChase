@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="js/activity.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+     <script type="text/javascript">
+         
+         // javascript for exiting the game
+        document.addEventListener("backbutton", funds, false);
+        function dismissApp() {
+           navigator.app.exitApp();
+         }
+
+         function funds() {
+                 document.getElementById("backdrop").style.display = "block";
+                 document.getElementById("fund").style.display = "block";
+              }
+              
+
+              function removefunds() {
+                document.getElementById("backdrop").style.display = "none";
+                 document.getElementById("fund").style.display = "none";
+              }
+              
+
+            // for randomising pick
+            function shuffle() {
+              var sel = Math.floor(Math.random() * 4);
+
+              if (sel == 0) {
+                 <!--
+                 setTimeout("location.href = 'game.html';",0000);
+                  -->
+              }
+              else if (sel == 1) {
+                <!--
+                 setTimeout("location.href = 'game2.html';",0000);
+                  -->
+              }
+              else if (sel == 2) {
+                  <!--
+                 setTimeout("location.href = 'game3.html';",0000);
+                  -->
+              }
+              else {
+                <!--
+                 setTimeout("location.href = 'game4.html';",0000);
+                  -->
+              }
+            }
+      </script>
+
+
+  </head>
+  <body>
+        <!-- ash background and exitting background -->
+        <div id="backdrop1"></div>
+        <a href="javascript:;" onClick="javascript:removefunds();"><div id="backdrop"></div></a>
+    <div id="fund">Do you want to exit?<br><br><a href="javascript:;" onClick="javascript:dismissApp();"><div id='action' style="background:green;">Yes</div></a></div>
+    
+
+    <!-- popups for each button pressed on the home page -->
+    <div id="pager1">
+      <br><br>
+      <div id="left">
+        <div id="dash" style="color:#003267;">6 tiles</div>
+        <a href="game.html"><img src="img/6time.png" /></a>
+        <a href="game3.html"><img src="img/6speed.png" /></a>
+        <img src="img/6eye_c.png" style="opacity:0.7;" />
+      </div>
+
+      <div id="right">
+         <div id="dash" style="color:#990166;">12 tiles</div>
+        <a href="game2.html"><img src="img/12time.png" /></a>
+        <a href="game4.html"><img src="img/12speed.png" /></a>
+        <img src="img/12eye_c.png" style="opacity:0.7;"  />
+      </div>
+
+      <a href="javascript:;" onClick="javascript:shuffle();"><div id="middle"> RANDOM PLAY </div></a>
+      <div id="s" style="background:#FF9900;"><i class="icon-arrow-left-2"></i></div>
+    </div>
+
+    <div id="pager2">
+      <div id="name"><div id='set' style="background: #f30;"> &nbsp; <i class="icon-arrow-left-2"></i> &nbsp; About</div></div>
+        <ul class="tabs">
+          <li class="active" rel="tab1">About</li>
+          <li rel="tab2">How To Play</li>
+        </ul>
+
+        <div class="tab_container">
+           <div id="tab1" class="tab_content">
+               <br><br>
+      Colour-Chase is a game that aims at improving your brain's ability to recognise colors.<br> It has modes that 
+      are differentiated by the number of boxes to choose from when playing.
+           </div>
+           <div id="tab2" class="tab_content">
+           <br><br>
+      TIMER<br>
+      Just tap the mini box that has the same color with the board box before the timer runs out. Every 20 consecutive 
+      taps you get correct reduces the time frame of the game hereby prompting you to go faster. Time frames are in the order 
+      4s, 3s, 2s, 1s, 0.5s, 0.2s and so on (you so would be a speedster to reach the end).<br><br>
+      SPEED<br>
+      This aims at seeing how many correct boxes you can tap per second. You'd have to make 20 right taps in the shortest time
+      possible.
+           </div>
+        </div>
+    
+    </div>
+
+    <div id="pager3" style="
+      background: linear-gradient(#f30, #f00);
+            background: -webkit-linear-gradient(#f30, #f00);
+            background: -ms-linear-gradient(#f30, #f00);
+    ">
+     <div id="name" style="background: transparent;"><div id='set' style="background: transparent;"> &nbsp; <i class="icon-arrow-left-2"></i> &nbsp;</div></div>
+      <br><br><br>
+      <center>
+      
+      <img src="img/icon.png" style="width: 40%;"><br>
+      Colour Chase<br><br><br>
+
+      <b>CREDIT</b><br><br>
+      Colour Chase<br>
+      Version 1.2.7<br>
+       &copy;2015. masble Inc.<br><br><br>
+    
+      Created by<br>
+      Mishael Kama<br>
+      <i class='icon-google-plus'></i> kamamishael <br><br>
+
+      Design<br>
+      Habib Ayoade<br>
+      IG: @iamdollapo<br><br><br>
+      <br>
+       
+      <a href="mailto:masble.inc@gmail.com" style="color:#ddd;">Comment on this app</a>
+    </center>
+    
+  </div>
+
+    <div id="pager4">
+      <div id="name"><div id='set' style="background: #FF6600;"> &nbsp; <i class="icon-arrow-left-2"></i> &nbsp; Settings</div></div>
+      <br><br><br><br>
+      <a href="javascript:;" onClick="javascript:vibrate();"><div id="dope">Vibration 
+        <div id="load">
+        <script type="text/javascript">
+        if (localStorage.vibrate == 'yes') {
+          document.write('<div id="vibrate" style="width:100%;"></div>');
+        }
+        else {
+           document.write('<div id="vibrate" style="width:0%;"></div>');
+        }
+        
+        </script>
+      </div>
+      </div></a>
+      <a href="javascript:;" onClick="javascript:music();"><div id="dope1">Sound 
+        <div id="load">
+        <script type="text/javascript">
+        if (localStorage.music == 'yes') {
+          document.write('<div id="music" style="width:100%;"></div>');
+        }
+        else {
+           document.write('<div id="music" style="width:0%;"></div>');
+        }
+        
+        </script>
+      </div>
+      </div></a>
+    </div>
+
+  
+
+     <!-- <div id="name" style="background:#FF9326;">colour chase</div> -->
+      
+      <!-- buttons on the home page -->
+      <div id='page'>
+      <br><br><br>
+      <div id="page1"> <img src="img/play.png" /> </div>
+      <div id="page4"> <img src="img/settings.png" /> </div>
+      <div id="page2"> <img src="img/about.png" /> </div>
+      <div id="page3"> <img src="img/credit.png" /> </div>
+      </div>
+
+
+      <div id="low"><img src="img/back.png" style="width:100%;" /></div>
+
+     <script type="text/javascript">
+
+     
+         //post box fade tab 
+  $(document).ready(function() {
+
+  $(".tab_content").hide();
+  $(".tab_content:first").show(); 
+
+  $("ul.tabs li").click(function() {
+    $("ul.tabs li").removeClass("active");
+    $(this).addClass("active");
+    $(".tab_content").hide();
+    var activeTab = $(this).attr("rel"); 
+    $("#"+activeTab).fadeIn(); 
+  });
+});
+   </script>
+      
+   </body>
+</html>

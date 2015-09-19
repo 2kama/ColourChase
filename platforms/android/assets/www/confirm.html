@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="css/bootmetro-icons.css" media="screen,projection">
+    <script type="text/javascript" src="js/jquery.1.10.1.js"></script>
+    <script type="text/javascript" src="js/jquery.cycle.js"></script>
+    <script type="text/javascript" src="phonegap.js"></script>
+
+    <script type="text/javascript">
+    $(document).ready(function() { 
+   if (localStorage.firsttimer == 2) {
+       setTimeout("location.href = 'play.html';",0000);
+   }
+   else {
+
+   }
+   
+   $('.start').click(function() { 
+
+              localStorage.vibrate = "yes";
+              localStorage.music = "yes";
+              localStorage.high = 0;
+              localStorage.high1 = 0.000;
+              localStorage.higher = 0;
+              localStorage.higher1 = 0.000;
+              
+              localStorage.firsttimer = 2;
+
+              <!--
+           setTimeout("location.href = 'play.html';",0000);
+           -->
+   });
+
+   });
+ </script>
+  </head>
+  <body>
+
+
+       <div id="classic">
+
+          <div id="jump" style="
+            background: linear-gradient(#FF6F00, #FF9900);
+            background: -webkit-linear-gradient(#FF6F00, #FF9900);
+            background: -ms-linear-gradient(#FF6F00, #FF9900);
+            color:#fff;">
+             <center><img src="img/hand.png" style="width: 120px; height: 100px;" /></center><br><br>
+             Tap the same color as seen in<br>
+             the display board before the <br>
+             timer runs down.
+          </div>
+          <div id="jump" style="
+          background: linear-gradient(#006CFF, #00CCFF);
+            background: -webkit-linear-gradient(#006CFF, #00CCFF);
+            background: -ms-linear-gradient(#006CFF, #00CCFF);
+          color:#fff;">
+             <center><img src="img/clock.png" style="width: 80px;" /></center><br><br>
+             Have fun in our different modes <br>
+             that test you on your speed,<br> 
+             accuracy and memory.
+          </div>
+          <div id="jump" style="
+          background: linear-gradient(#CC0001, #720000);
+            background: -webkit-linear-gradient(#CC0001, #720000);
+            background: -ms-linear-gradient(#CC0001, #720000);
+          color:#fff;">
+            <center><img src="img/wink.png" style="width: 120px;" /></center><br><br>
+             Improve your highscore and your <br>
+             brain's color recognition skill.
+          </div>
+
+       </div>
+
+        <div class='start'>START</div>
+
+<script type="text/javascript">
+  $("#classic").cycle({
+    fx:"fade",
+    delay:0000,
+    timeout:4000,
+});
+</script>
+    </body>
+  </html>
